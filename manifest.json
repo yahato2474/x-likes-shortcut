@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "X Likes Shortcut",
+  "version": "1.1.0",
+  "description": "X (Twitter) のサイドバーに「いいね」を追加し、不要な項目を隠せます。",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "X Likes Shortcut",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["items.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
